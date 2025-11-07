@@ -156,25 +156,3 @@ player.CharacterAdded:Connect(function()
 end)
 
 applySpeed(speed)
-çlocal Players = game:GetService("Players")
-local player = Players.LocalPlayer
-local gui = player:WaitForChild("PlayerGui")
-
-local frame = gui:FindFirstChild("SpeedControlGUI")
-if not frame then return end
-
-local closeBtn = Instance.new("TextButton", frame)
-closeBtn.Size = UDim2.new(0,36,0,36)
-closeBtn.Position = UDim2.new(1,-44,0,8)
-closeBtn.BackgroundColor3 = Color3.fromRGB(180,180,180)
-closeBtn.AutoButtonColor = false
-closeBtn.Text = "×"
-closeBtn.Font = Enum.Font.GothamBold
-closeBtn.TextSize = 22
-closeBtn.TextColor3 = Color3.fromRGB(255,255,255)
-closeBtn.ZIndex = 20
-Instance.new("UICorner", closeBtn).CornerRadius = UDim.new(0,18)
-
-closeBtn.MouseButton1Click:Connect(function()
-	frame:Destroy()
-end)
